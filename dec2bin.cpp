@@ -20,8 +20,8 @@ void tobin(int x){
         }
         count++;
     }
-    b[count] = 1;
-    b[31] = (x>0)?0:1;
+    b[count] = (q==0)?0:1;
+    b[31] = (x>=0)?0:1;
     for(int i=31; i>=0; i--){
             if((i+1)%8==0){
                 cout<<" ";
@@ -33,5 +33,5 @@ void tobin(int x){
 
 int main()
 {
-    tobin(-2147483647);
+    tobin(0);
 }
