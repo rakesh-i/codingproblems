@@ -1,3 +1,4 @@
+//passing function through pointers
 #include<iostream>
 #include<math.h>
 #include<ctype.h>
