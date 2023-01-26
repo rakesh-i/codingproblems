@@ -1,4 +1,4 @@
-//reverse an array using pointers
+//reverse an array using pointers (printing only)
 #include<iostream>
 #include<math.h>
 #include<ctype.h>
