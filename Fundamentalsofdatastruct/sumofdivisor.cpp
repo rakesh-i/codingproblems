@@ -1,3 +1,4 @@
+//check if divisors of n sums to n
 #include<iostream>
 #include<math.h>
 #include<ctype.h>
@@ -25,9 +26,6 @@ int ye(int x){
             sum +=i;
         }
     }
-    // for(int j = 0; j<1000; j++){
-    //     sum += divisor[j];
-    // }
     if(sum==x){
         return 1;
     }
