@@ -4,37 +4,31 @@
 #include<ctype.h>
 #include<cstring>
 #include <cfloat>
+#include<stack>
 #define SWAP(x, y, t)  ((t)=(x), (x)=(y), (y)=(t))
-#define COMPARE(x, y) (((x)<(y))?-1:((x)==(y))?0:1)
+using namespace std;
 
-void prem(char *list, int i, int n); //select the sub set form the list
+void prem(char *a, int i, int n);
 
 int main()
 {
-    char a[] = {'a', 'b', 'c', 'd'};
+    char a[] = {'a', 'b', 'c'};
     prem(a, 0, 3);
 }
 
-void prem(char *list, int i, int n){
-    int j, temp;
-    //printf("(%d,%d) ", i, n);
+void prem(char *a, int i, int n){
+    int temp;
     if(i==n){
-        //printf("|");
-        for(j=0; j<=n; j++){
-            printf("%c ", list[j]);
+        for(int k=0; k<n; k++){
+            printf("%c ", a[k]);
         }
         printf("\n");
     }
     else{
-        for(j=i; j<=n; j++){
-            //printf("s1 ");
-            SWAP(list[i], list[j], temp);
-            //printf("s2 ");
-            prem(list, i+1, n);
-            //printf("s3 ");
-            SWAP(list[i], list[j], temp);
-            //printf("s4\n");
+        for(int j=i; j<n; j++){
+            SWAP(a[j], a[i], temp);   //swaping and  setting different bases
+            prem(a, i+1, n);
+            SWAP(a[i], a[j], temp);  //start fresh with abc
         }
     }
 }
-
