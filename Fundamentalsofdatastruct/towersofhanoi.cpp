@@ -4,22 +4,24 @@
 #include<cstring>
 #include <cfloat>
 #include<stack>
+#include<vector>
+#define SWAP(x, y, t)  ((t)=(x), (x)=(y), (y)=(t))
+#define NOT(x) (((x)<1)?1:0) 
 using namespace std;
 
-void hanoi(int n, char from, char to, char aux);
-
-int main()
-{
-    hanoi(10, 'A', 'C', 'B');
-}
-
-void hanoi(int n, char from, char to, char aux){
-    static int count = 0;
-    //cout<<count++<<endl;
+template<class T>
+void hanoi(int n, T from, T to, T aux){
     if(n==0){
         return;
     }
-    hanoi(n-1, from, aux, to);
-    printf("Move disk %d from %c to %c\n", n, from, to);
-    hanoi(n-1, from, to, aux);
+    else{
+        hanoi(n-1, from, aux, to);
+        cout<<"move disk "<<n<<" from "<<from<<" to "<<to<<endl;
+        hanoi(n-1, aux, to, from);
+    }
+}
+
+int main()
+{
+    hanoi(3, 'a', 'c', 'b');
 }
