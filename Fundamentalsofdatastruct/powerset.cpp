@@ -28,7 +28,7 @@ void powset(vector<vector<int>> &v, vector<int> &b, int i){
         v.push_back({});
     }
     else{
-        subset(v, b, i+1);
+        powset(v, b, i+1);
         int n = v.size();
         //cout<<n<<endl;
         for(int j=0; j<n; j++){
